@@ -19,7 +19,7 @@ function App() {
   const [tasks, setTasks] = useState<TasksProps[]>([]);
 
   const handleAddNewTask = (value: string) => {
-    const randomNumber = createId();
+    const randomNumber = createId(); // 9123818937912901289037182389
 
     const currentDate = new Date();
     const day = currentDate.getDate();
@@ -55,7 +55,7 @@ function App() {
       }
       return task;
     })
-
+    
     setTasks(updateTasks)
     toast.success('Você completou essa tarefa!');
 
@@ -64,7 +64,6 @@ function App() {
   const handleRemoveTask = (id: string) => {
     const findTask = tasks.filter((task) => task.id !== id);
     setTasks(findTask);
-    toast.success('Tarefa removida com sucesso');
   }
 
   return (
